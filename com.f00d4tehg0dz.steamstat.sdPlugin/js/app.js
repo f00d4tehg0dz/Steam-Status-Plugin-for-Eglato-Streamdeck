@@ -311,7 +311,7 @@ let intervals = {};
             }
         }
         function getResults(updateTitleFn) {
-            let endPoint = "http://localhost:3000/stats";
+            let endPoint = "https://f00d.me/stats";
             $.getJSON(endPoint)
                 .done(function (response) {
                     // updateTitleFn(response[0].status)
