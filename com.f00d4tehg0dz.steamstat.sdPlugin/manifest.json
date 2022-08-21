@@ -15,6 +15,8 @@
   ],
   "SDKVersion": 2,
   "Author": "Adrian Chrysanthou",
+  "Category": "Steam Status [f00d4tehg0dz]",
+  "CategoryIcon": "icons/category-icon",
   "CodePath": "index.html",
   "Description": "A Steam Server Status plugin developed by Adrian Chrysanthou. You can find more information about this plugin at https://github.com/f00d4tehg0dz/Steam-Status-Plugin-for-Eglato-Streamdeck. Please report any issues you see on the project's Github page. I welcome any feedback.",
   "Name": "Steam Server Status",
