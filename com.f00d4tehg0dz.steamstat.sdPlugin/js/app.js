@@ -3,7 +3,7 @@ let intervals = {};
         const actionName = "com.f00d4tehg0dz.steamstat.action";
 
         $SD.on("connected", function (jsonObj) {
-            console.log("Connected!13");
+            console.log("Connected!");
       
         });
         
@@ -55,7 +55,7 @@ let intervals = {};
                     Object.assign(clonedSettings, settings);
                     setTitleStatus(context, clonedSettings);
                 },
-                moment.duration(1, 'hours').asMilliseconds());
+                moment.duration(0.15, 'hours').asMilliseconds());
         }
 
         function setTitleStatus(context, settings) {
@@ -84,7 +84,7 @@ let intervals = {};
         function normal() {
             ctx.fillStyle = "#008000";
             ctx.fill();
-            ctx.fillText(result.OnlineOnSteam, 10, 25);
+            ctx.fillText(result.CurrentSteam, 10, 25);
         }
         function na() {
             ctx.fillStyle = "#8a8db7";
@@ -103,7 +103,7 @@ let intervals = {};
         }
 
 
-        // InGame
+        // inGame
         function delayedP() {
             ctx.fillStyle = "#26c6da";
             ctx.fill();
@@ -112,7 +112,7 @@ let intervals = {};
         function normalP() {
             ctx.fillStyle = "#008000";
             ctx.fill();
-            ctx.fillText(result.InGameOnSteam, 10, 50);
+            ctx.fillText(result.DailyPeakSteam, 10, 50);
         }
         function na() {
             ctx.fillStyle = "#8a8db7";
@@ -225,81 +225,37 @@ let intervals = {};
                 
                 // Add to String and Split Lines
 
-                splitlines = ("ON" + ' ' + result.OnlineOnSteam.replace(new RegExp(' ', 'g'), ' ') + '\n' + "IN" + ' ' + result.InGameOnSteam + '\n' + "ST" + ' ' + result.SteamStore + '\n' + "CM" + ' ' + result.SteamCommunity + '\n' + "AP" + ' ' + result.SteamWebAPI + '\n' )
+                splitlines = ("CR" + ' ' + result.CurrentSteam.replace(new RegExp(' ', 'g'), ' ') + '\n' + "PK" + ' ' + result.DailyPeakSteam + '\n' + "ON" + ' ' + result.SteamOnline + '\n' + "ST" + ' ' + result.SteamStore + '\n' + "AP" + ' ' + result.SteamWebAPI + '\n' )
                 // Split Lines
                 var lines = splitlines.split('\n');
  
                 var arr = [lines.shift(),lines.shift(), lines.shift(), lines.shift(), lines.shift(), lines.shift(), lines.join(' ')];
-                const online = arr[0];
-                const ingame = arr[1];
                 const store = arr[2];
                 const community = arr[3];
                 const webAPI = arr[4];
-
-                // If online contains a text swap out THAT specific text
-                if (online.includes('million') == true) {
-                    normal();
-                } else if (online.includes('Delayed') == true) {
-                    delayed();
-                } else if (online.includes('N/A') == true) {
-                    na();
-                } else if (online.includes('major') == true) {
-                    majoroutage();
-                } else if (online.includes('minor') == true) {
-                    partialoutage();
-                }
-
-                // If ingame contains a text swap out THAT specific text
-                if (ingame.includes('million') == true) {
-                    normalP();
-                } else if (ingame.includes('Delayed') == true) {
-                    delayedP();
-                } else if (ingame.includes('N/A') == true) {
-                    naP();
-                } else if (ingame.includes('major') == true) {
-                    majoroutageP();
-                } else if (ingame.includes('minor') == true) {
-                    partialoutageP();
-                }
-
+console.log(community)
+                normal();    normalP();
+               
+              
                 // If store contains a text swap out THAT specific text
-                if (store.includes('Normal') == true) {
+                if (store.includes('Online') == true) {
                     normalE();
-                } else if (store.includes('Delayed') == true) {
-                    delayedE();
-                } else if (store.includes('N/A') == true) {
-                    naE();
-                } else if (store.includes('major') == true) {
+                 } else if (store.includes('Offline') == true) {
                     majoroutageE();
-                } else if (store.includes('minor') == true) {
-                    partialoutageE();
-                }
-
+                 }
                  // If community contains a text swap out THAT specific text
-                 if (community.includes('Normal') == true) {
+                 if (community.includes('Live') == true) {
                     normalF();
-                } else if (community.includes('Delayed') == true) {
-                    delayedF();
-                } else if (community.includes('N/A') == true) {
-                    naF();
-                } else if (community.includes('major') == true) {
+                } else if (community.includes('Offline') == true) {
                     majoroutageF();
-                } else if (community.includes('minor') == true) {
-                    partialoutageF();
                 }
 
                  // If community contains a text swap out THAT specific text
-                 if (webAPI.includes('Normal') == true) {
+                 if (webAPI.includes('Live') == true) {
                     normalG();
-                } else if (webAPI.includes('N/A') == true) {
-                    naG();
-                } else if (webAPI.includes('Delayed') == true) {
-                    delayedG();
-                } else if (webAPI.includes('major') == true) {
+                } else if (webAPI.includes('Offline') == true) {
                     majoroutageG();
-                } else if (webAPI.includes('minor') == true) {
-                    partialoutageG();
-                }
+                } 
 
                 // Null the Title so Nothing Shows
                 $SD.api.setTitle(context, '', null);
