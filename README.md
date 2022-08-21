@@ -1,6 +1,6 @@
-# Steamstat.us Unofficial Plugin for Elgato Streamdeck
+# Steam Server Status Unofficial Plugin for Elgato Streamdeck
 
-View Steamstat.us Data using Steamstat.us Unoffcial API
+View Steam Server information using my Steam Server Status Unoffcial API
 
 This an extension for the [ElGato-StreamDeck](https://www.elgato.com/en/gaming/stream-deck).
 
