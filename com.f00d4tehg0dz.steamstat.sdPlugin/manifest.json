@@ -9,21 +9,21 @@
         }
       ],
       "SupportedInMultiActions": false,
-      "Tooltip": "A Steam Servers plugin developed by Adrian Chrysanthou",
+      "Tooltip": "A Steam Servers Status plugin developed by f00d4tehg0dz",
       "UUID": "com.f00d4tehg0dz.steamstat.action"
     }
   ],
   "SDKVersion": 2,
-  "Author": "Adrian Chrysanthou",
-  "Category": "Steam Status [f00d4tehg0dz]",
+  "Author": "f00d4tehg0dz",
+  "Category": "Steam Status",
   "CategoryIcon": "icons/category-icon",
   "CodePath": "index.html",
-  "Description": "A Steam Server Status plugin developed by Adrian Chrysanthou. You can find more information about this plugin at https://github.com/f00d4tehg0dz/Steam-Status-Plugin-for-Eglato-Streamdeck. Please report any issues you see on the project's Github page. I welcome any feedback.",
+  "Description": "A Steam Server Status plugin developed by f00d4tehg0dz. Please report any issues you see on the project's Github page. I welcome any feedback.",
   "Name": "Steam Server Status",
   "Icon": "icon",
   "URL": "https://github.com/f00d4tehg0dz/Steam-Status-Plugin-for-Eglato-Streamdeck",
   "PropertyInspectorPath": "steamstat.html",
-  "Version": "2.3",
+  "Version": "2.4",
   "OS": [
     {
       "Platform": "mac",
